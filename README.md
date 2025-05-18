@@ -1,10 +1,78 @@
--   Mở terminal ở thư mục chứa file docker-compose.yml
--   Chạy câu lệnh: docker compose up -d --build
--   Có thể tùy chỉnh port trong file docker-compose.yml và Dockerfile
+# Computer Sales Backend
 
-Công nghệ sử dụng
-* Node.js: môi trường runtime JavaScript không đồng bộ, phù hợp xây dựng server backend mạnh mẽ, mở rộng cao; triển khai trên Google Cloud
-* REST API: giao tiếp giữa frontend và backend qua HTTP (GET, POST, PUT, DELETE) để xử lý dữ liệu
-* Socket.IO: thư viện giao tiếp hai chiều, thời gian thực giữa client và server, dùng cho tính năng bình luận/đánh giá ngay lập tức, chat realtime giữa user và admin
-* Redis: lưu trữ in‑memory, dùng làm message broker cho hàng đợi gửi email; một worker xử lý nền kéo email từ Redis và thực hiện gửi
-* Elasticsearch: công cụ tìm kiếm dựa trên Lucene, cung cấp tìm kiếm nhanh, gợi ý và khớp gần đúng cho sản phẩm
+## Project Overview
+
+This project is a backend system for a computer sales application. It provides APIs and services to manage orders, inventory, and user interactions. The system is designed to be scalable and efficient, leveraging modern technologies and best practices.
+
+## Features
+
+-   **Order Management**: Handles order creation, updates, and notifications.
+-   **Inventory Management**: Tracks stock levels and updates in real-time.
+-   **Email Notifications**: Sends order confirmation and status updates to customers.
+-   **Queue System**: Uses Redis for managing background tasks and job queues.
+-   **Database Integration**: MongoDB for storing and managing data.
+
+## Technologies Used
+
+-   **Node.js**: Backend runtime environment.
+-   **TypeScript**: Strongly typed programming language for better code quality.
+-   **Express.js**: Web framework for building APIs.
+-   **MongoDB**: NoSQL database for data storage.
+-   **Redis**: In-memory data structure store for caching and job queues.
+-   **Docker**: Containerization for consistent development and deployment environments.
+-   **Docker Compose**: Orchestrates multi-container Docker applications.
+-   **Elasticsearch**: Used for enhancing search performance and scalability.
+
+## Setup Instructions
+
+### Prerequisites
+
+-   Install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/).
+-   Install [Node.js](https://nodejs.org/) and npm.
+
+### Steps to Run the Project
+
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd computer-sales-be
+    ```
+2. Create a `.env` file in the root directory and configure the following variables:
+    ```env
+    REDIS_URL=redis://localhost:6379
+    MONGO_URL=mongodb://localhost:27017/computer-sales
+    ELASTICSEARCH_HOST=http://elasticsearch:9200
+    ```
+3. Build and start the services using Docker Compose:
+    ```bash
+    docker compose up -d --build
+    ```
+4. Install dependencies and build the project:
+    ```bash
+    npm install
+    npm run build
+    ```
+5. Start the application:
+    ```bash
+    npm start
+    ```
+
+### Cleaning and Rebuilding
+
+To clean and rebuild the project:
+
+```bash
+npm cache clean --force
+rm -rf node_modules
+npm install
+npm run build
+```
+
+## Additional Notes
+
+-   Ensure that the `REDIS_URL` and `MONGO_URL` in the `.env` file are correctly configured.
+-   Use `docker logs <container_name>` to debug any issues with Docker containers.
+
+## License
+
+This project is licensed under the MIT License.
