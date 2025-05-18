@@ -1,0 +1,2 @@
+-   Mở terminal ở thư mục chứa file docker-compose.yml
+-   Chạy câu lệnh: docker compose up -d --build
