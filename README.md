@@ -1,2 +1,3 @@
 -   Mở terminal ở thư mục chứa file docker-compose.yml
 -   Chạy câu lệnh: docker compose up -d --build
+-   Có thể tùy chỉnh port trong file docker-compose.yml và Dockerfile
