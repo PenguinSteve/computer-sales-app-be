@@ -41,19 +41,11 @@ This project is a backend system for a computer sales application. It provides A
     ```env
     REDIS_URL=redis://localhost:6379
     MONGO_URL=mongodb://localhost:27017/computer-sales
+    ELASTICSEARCH_HOST=http://elasticsearch:9200
     ```
-3. Build and start the services using Docker Compose:
+3. Build and start the project using Docker Compose:
     ```bash
     docker compose up -d --build
-    ```
-4. Install dependencies and build the project:
-    ```bash
-    npm install
-    npm run build
-    ```
-5. Start the application:
-    ```bash
-    npm start
     ```
 
 ### Cleaning and Rebuilding
