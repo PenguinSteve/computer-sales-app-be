@@ -38,11 +38,11 @@ services:
         container_name: mail-worker
         command: node dist/queue/mail.worker.js
         depends_on:
-        - redis
+            - redis
         env_file:
-        - .env.docker
+            - .env.docker
         networks:
-        - elastic-network
+            - elastic-network
 
 networks:
     elastic-network:
